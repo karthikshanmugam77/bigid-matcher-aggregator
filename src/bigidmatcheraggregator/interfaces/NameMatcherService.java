@@ -1,16 +1,13 @@
 package bigidmatcheraggregator.interfaces;
 
-import java.util.List;
-
 public interface NameMatcherService {
-	/**
-     * Finds all occurrences of a specified name within the given content.
+    /**
+     * Finds all occurrences of a specified name within a given line.
      * 
-     * @param content The text content to search through.
-     * @param name The name to be searched for in the content.
+     * @param line The text line to search through.
+     * @param name The name to be searched for in the line.
      * @param linePosition The line number offset for the occurrences.
-     * @return A list of strings representing the positions of each occurrence, 
-     *         formatted as "{lineOffset=X, charOffset=Y}".
+     * @param resultAggregatorService The service used to aggregate results of name matches.
      */
-	List<String> findNames(String content, String name, long linePosition);
+    void findNames(String line, String name, long linePosition, ResultAggregatorService resultAggregatorService);
 }
